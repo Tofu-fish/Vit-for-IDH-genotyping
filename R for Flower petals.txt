@@ -1,0 +1,13 @@
+
+mydata <- read.table("data.txt", sep = "\t", header = T, stringsAsFactors = F, colClasses = c("character", "numeric", "character", "integer", "character"))
+head(mydata)
+
+rx<-10.5 * 35.43307
+ry<-7.5 * 35.43307
+rr<-5.00 * 35.43307
+#将svg语句写入circos
+circos <- data.frame(paste("<circle cx=\"", rx, "\" cy=\"", ry, "\" r=\"", -0.5 * rr, "\" style=\"stroke:#b7b7b7; stroke-width:1; stroke-dasharray: 10 5; fill:none\"/>", sep = ""),
+                     paste("<circle cx=\"", rx, "\" cy=\"", ry, "\" r=\"", 0.0 * rr, "\" style=\"stroke:#6c6b6b; stroke-width:2; fill:none\"/>", sep = ""),
+                     paste("<circle cx=\"", rx, "\" cy=\"", ry, "\" r=\"", .50 * rr, "\" style=\"stroke:#b7b7b7; stroke-width:1; stroke-dasharray: 10 5; fill:none\"/>", sep = ""),
+                     paste("<circle cx=\"", rx, "\" cy=\"", ry, "\" r=\"", 1.00*rr, "\" style=\"stroke:#6c6b6b; stroke-width:2; fill:none\"/>", sep = "")
+)
